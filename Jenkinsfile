@@ -38,6 +38,13 @@ pipeline {
                 sh 'docker push balasastha/banking-finance:1'
             }
         }
+	stage ('Creation of docker container'){
+            steps
+            {
+                echo 'Creating docker container'
+                sh 'docker run -itd -p 8084:8081 balasastha/banking-finance:1'
+            }
+        }
         stage ('Invoking ansible playbook'){
             steps
             {
