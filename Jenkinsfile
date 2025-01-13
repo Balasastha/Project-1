@@ -29,7 +29,6 @@ pipeline {
                 withCredentials([string(credentialsId: 'dockerhubpass', variable: 'dockerhubpass')]) {
                 sh 'docker login -u balasastha -p ${dockerhubpass}'
                 }
-}
             }
         }
         stage ('Push image into docker'){
